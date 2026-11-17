@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mokaya Pro — Data Science Academy | DS 301</title>
+<meta name="description" content="Full Data Science course web app: 10 units, 38 topics, live Python playground, mini projects and a capstone final project. By Lecturer Kennedy Blip, Meru Kenya.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+</head>
+<body>
+
+<!-- ===== TOP NAVBAR ===== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/dashboard">
+      <span class="brand-logo">🎓</span>
+      <span class="brand-text"><strong>Mokaya Pro</strong><small>Data Science Academy • DS 301</small></span>
+    </a>
+    <div class="topbar-search">
+      <span>🔍</span>
+      <input id="globalSearch" type="search" placeholder="Search topics, units, projects… (e.g. Pandas, CNN, SQL)">
+      <div id="searchResults" class="search-results hidden"></div>
+    </div>
+    <div class="topbar-actions">
+      <div class="progress-pill" title="Your course progress">
+        <div class="mini-ring" id="topProgressRing">0%</div>
+        <span id="topProgressText">0 / 38 topics</span>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="location.hash='#/final-project'">🎓 Final Project</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-lecturer">
+      <div class="avatar">KB</div>
+      <div>
+        <strong>Kennedy Blip</strong>
+        <small>Lecturer • Meru, Kenya 🇰🇪</small>
+      </div>
+    </div>
+    <nav class="side-nav" id="sideNav">
+      <a href="#/dashboard" data-route="dashboard"><span>🏠</span> Dashboard</a>
+      <a href="#/course" data-route="course"><span>📚</span> My Course — Units</a>
+      <a href="#/playground" data-route="playground"><span>💻</span> Code Playground</a>
+      <a href="#/projects" data-route="projects"><span>🛠️</span> Mini Projects</a>
+      <a href="#/final-project" data-route="final-project"><span>🎓</span> Final Project</a>
+      <a href="#/resources" data-route="resources"><span>📖</span> Library & References</a>
+      <a href="#/quiz" data-route="quiz"><span>📝</span> Quiz & Assessment</a>
+      <a href="#/teacher" data-route="teacher"><span>👨‍🏫</span> About Lecturer</a>
+    </nav>
+    <div class="sidebar-card">
+      <strong>📅 This Week</strong>
+      <p>Tue & Thu 09:00–11:00<br>Lab Fri 14:00–16:00<br>Office Wed 10:00–12:00</p>
+      <a class="btn btn-outline btn-sm" href="#/teacher">Full timetable →</a>
+    </div>
+    <div class="sidebar-card accent">
+      <strong>🚀 Deployed on Vercel</strong>
+      <p>This whole course app is live on Vercel — exactly what Unit 9 teaches.</p>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main" id="main"></main>
+</div>
+
+<!-- ===== TOPIC MODAL ===== -->
+<div class="modal-backdrop hidden" id="topicModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeTopic()">✕</button>
+    <div id="topicModalBody"></div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="js/course-data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
