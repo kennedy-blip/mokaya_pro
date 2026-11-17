@@ -1,7 +1,7 @@
 {
   "name": "mokaya-pro-data-science-academy",
   "version": "1.0.0",
-  "description": "Mokaya Pro — Data Science Academy (DS 301). Full school course web app: 10 units, 44 topics, live Python playground, mini projects and capstone final project. Lecturer: Kennedy Blip, Meru Kenya.",
+  "description": "Mokaya Pro — Data Science Academy (DS 301). Full school course web app: 10 units, 38 topics, live Python playground, mini projects and capstone final project. Lecturer: Kennedy Blip, Meru Kenya.",
   "private": true,
   "scripts": {
     "dev": "npx serve . -l 3000",
